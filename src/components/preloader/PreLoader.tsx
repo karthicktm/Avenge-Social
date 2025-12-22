@@ -7,7 +7,7 @@ interface PreLoaderProps {
   duration?: number;
 }
 
-const TEXT = 'Social Bro';
+const TEXT = 'Avenge Social';
 
 export function PreLoader({ onComplete, duration = 2000 }: PreLoaderProps) {
   const [isFadingOut, setIsFadingOut] = useState(false);

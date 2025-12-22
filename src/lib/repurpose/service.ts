@@ -78,7 +78,7 @@ async function generateHooks(
     const cleanedContent = content.replace(/```json\n?|\n?```/g, '').trim();
     const hooks = JSON.parse(cleanedContent);
 
-    if (Array.isArray(hooks) && hooks.length === 3) {
+  if (Array.isArray(hooks) && hooks.length === 3) {
       return hooks;
     }
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const TEXT = 'Social Bro';
+const TEXT = 'Avenge Social';
 
 export function WelcomeHeader() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

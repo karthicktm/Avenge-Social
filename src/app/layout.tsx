@@ -16,7 +16,7 @@ const doto = Doto({
 });
 
 export const metadata: Metadata = {
-  title: 'Social Bro - Content Discovery Platform',
+  title: 'Avenge Social - Content Discovery Platform',
   description: 'Discover and explore content across YouTube, TikTok, Instagram, and more',
 };
 

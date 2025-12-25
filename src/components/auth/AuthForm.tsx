@@ -56,6 +56,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         email,
         password,
         redirect: false,
+        callbackUrl: '/',
       });
 
       if (result?.error) {
@@ -65,8 +66,12 @@ export function AuthForm({ mode }: AuthFormProps) {
       }
 
       if (result?.ok) {
-        toast.success('Signed in successfully!');
-        router.push('/');
+        // Let NextAuth handle the redirect with proper session handling
+        if (result.url) {
+          router.push(result.url);
+        } else {
+          router.push('/');
+        }
         router.refresh();
       } else {
         toast.error('Sign in failed');

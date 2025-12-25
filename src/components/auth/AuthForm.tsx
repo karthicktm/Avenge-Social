@@ -64,9 +64,16 @@ export function AuthForm({ mode }: AuthFormProps) {
         return;
       }
 
-      router.push('/');
-      router.refresh();
-    } catch {
+      if (result?.ok) {
+        toast.success('Signed in successfully!');
+        router.push('/');
+        router.refresh();
+      } else {
+        toast.error('Sign in failed');
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.error('Sign in error:', error);
       toast.error('Something went wrong');
       setIsLoading(false);
     }

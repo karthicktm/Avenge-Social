@@ -56,7 +56,6 @@ export function AuthForm({ mode }: AuthFormProps) {
         email,
         password,
         redirect: false,
-        callbackUrl: '/',
       });
 
       if (result?.error) {
@@ -65,20 +64,9 @@ export function AuthForm({ mode }: AuthFormProps) {
         return;
       }
 
-      if (result?.ok) {
-        // Let NextAuth handle the redirect with proper session handling
-        if (result.url) {
-          router.push(result.url);
-        } else {
-          router.push('/');
-        }
-        router.refresh();
-      } else {
-        toast.error('Sign in failed');
-        setIsLoading(false);
-      }
-    } catch (error) {
-      console.error('Sign in error:', error);
+      router.push('/');
+      router.refresh();
+    } catch {
       toast.error('Something went wrong');
       setIsLoading(false);
     }
